@@ -1,0 +1,26 @@
+<!-- projects/templates/projects/project_detail.html -->
+
+{% extends "base.html" %}
+{% block title %}Projects{% endblock title %}
+{% block content %}
+
+
+<h1>{{ project.name }}</h1>
+<p>Code: {{ project.code }}</p>
+<p>Sales Rep: {{ project.salesRep }}</p>
+<p>Client: {{ project.client }}</p>
+<p>Creation Date: {{ project.creationDate }}</p>
+<p>Stage: {{ project.stage }}</p>
+<p>Probability: {{ project.probability }}</p>
+<p>Estimated Value: {{ project.estimatedValue }}</p>
+<p>Estimated Close Date: {{ project.estimatedCloseDate }}</p>
+<p>Contract Value: {{ project.contractValue }}</p>
+<p>Contract Date: {{ project.contractDate }}</p>
+<p>Total Received Amount: {{ project.total_received_amount }}</p>
+<a href="{% url 'project_update' project.pk %}">Edit</a>
+<a href="{% url 'project_delete' project.pk %}">Delete</a>
+<a href="{% url 'project_list' %}">Back to list</a>
+
+    
+<br/>
+{% endblock content %}

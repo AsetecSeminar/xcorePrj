@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+{% block title %}Projects{% endblock title %}
+{% block content %}
+
+
+<h1>Are you sure you want to delete "{{ project.name }}"?</h1>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+</form>
+<a href="{% url 'project_list' %}">Back to list</a>
+
+    
+<br/>
+{% endblock content %}

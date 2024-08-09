@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}ASETEC{% endblock title %}
+
+{% block content %}
+
+<!-- ############################################ -->
+{% if user.is_authenticated %}
+
+<p>
+Hi {{ user.username }}! You are logged in.
+</p>
+<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+<p>
+  <button type="submit">Log Out</button>
+</p>  
+</form>
+<br/>
+<!--
+<p><a class="btn btn-primary" href="{% url 'article_list' %}" role="button">
+  View all articles</a></p> 
+-->  
+
+{% else %}
+
+<p>Please log in</p>
+<a href="{% url 'login' %}">Log In</a> |
+<a href="{% url 'signup' %}">Sign Up</a>
+
+
+{% endif %}
+<!-- ############################################ -->
+
+{% endblock content %}

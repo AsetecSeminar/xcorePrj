@@ -1,0 +1,18 @@
+<!-- projects/templates/projects/project_form.html -->
+
+{% extends "base.html" %}
+{% block title %}Projects{% endblock title %}
+{% block content %}
+
+
+    <h1>New Project</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'project_list' %}">Back to list</a>
+
+    
+<br/>
+{% endblock content %}
