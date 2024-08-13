@@ -1,0 +1,16 @@
+<table>
+  <tr>
+      <th>Product Code</th>
+      <th>Product Name</th>
+      <th>Total Revenue</th>
+      <th>Category</th>
+  </tr>
+  {% for product_code, data in analysis_data %}
+  <tr>
+      <td>{{ product_code }}</td>
+      <td>{{ data.product_name }}</td>
+      <td>{{ data.total_revenue }}</td>
+      <td>{{ data.category }}</td>
+  </tr>
+  {% endfor %}
+</table>

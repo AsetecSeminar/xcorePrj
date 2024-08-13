@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "pages",
     "articles",  # new
     "projects", 
+    "abc_analysis", 
 ]
 
 MIDDLEWARE = [
